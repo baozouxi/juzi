@@ -1,0 +1,51 @@
+#user_info {
+    width: 100%;
+    height: 1.3rem;
+    background: url(../img/h-b.png);
+    background-size: 100%;
+    background-repeat: no-repeat;
+}
+
+
+
+#user_info .headImg {
+    width: 0.8rem;
+    border-radius: 50%;
+    overflow: hidden;
+}
+
+#user_info .headImg img {
+    width: 100%;
+}
+
+#user_info .wrap {
+    width: 90%;
+    margin: 0 auto;
+    padding-top: 0.2rem;
+}
+
+.nick_text{
+    padding-left: 0.1rem;
+}
+
+.nickname {
+    font-size: 0.15rem;
+    color: #55480c;
+    margin-top: 0.13rem;
+}
+
+.fav span{
+    color:#787504;
+}
+
+
+footer span{
+    line-height: 0.4rem;
+    width: 50%;
+    padding-top: 0;
+    font-size: 0.16rem;
+}
+
+footer span.active{
+    color:#ed874f;
+}

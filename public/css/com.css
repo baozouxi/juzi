@@ -1,0 +1,99 @@
+body, h1, h2, h3, h4, h5, h6, hr, p, blockquote, dl, dt, dd, ul, ol, li, pre, form, fieldset, legend, button, input, textarea, th, td { margin:0; padding:0; }
+body{font-size:0.12rem; padding-bottom: 0.35rem; max-width: 640px; margin:0 auto;}
+h1, h2, h3, h4, h5, h6{ font-size:100%; }
+ul, ol { list-style:none; }
+a { text-decoration:none; color:#000; }
+img { border:0; max-width: 100%;}
+
+@font-face {
+    font-family: 'iconfont';  /* project id 460377 */
+    src: url('https://at.alicdn.com/t/font_460377_8iwq7k3ixljif6r.eot');
+    src: url('https://at.alicdn.com/t/font_460377_8iwq7k3ixljif6r.eot?#iefix') format('embedded-opentype'),
+    url('https://at.alicdn.com/t/font_460377_8iwq7k3ixljif6r.woff') format('woff'),
+    url('https://at.alicdn.com/t/font_460377_8iwq7k3ixljif6r.ttf') format('truetype'),
+    url('https://at.alicdn.com/t/font_460377_8iwq7k3ixljif6r.svg#iconfont') format('svg');
+}
+
+.iconfont{
+    font-family:"iconfont" !important;
+    font-size:16px;font-style:normal;
+    -webkit-font-smoothing: antialiased;
+    -webkit-text-stroke-width: 0.2px;
+    -moz-osx-font-smoothing: grayscale;
+
+}
+
+
+
+
+.fl{
+    float: left;
+}
+
+.fr{
+    float: right;
+}
+
+.tr{
+    text-align: right;
+}
+
+.tl{
+    text-align: left;
+}
+
+.hidden{
+    overflow: hidden;
+}
+
+
+.menu_active{
+    color:#f95900;
+}
+
+
+
+
+footer{
+    height: 0.4rem;
+    width: 100%;
+    position: fixed;
+    z-index: 99;
+    max-width: 640px;
+    box-sizing: border-box;
+    bottom: 0;
+    background: #d0d0d0;
+    padding: 0 5%;
+}
+
+
+
+footer  span{
+    display: block;
+    width: 33.33333%;
+    float: left;
+    padding-top:0.05rem;
+    text-align: center;
+}
+
+footer  span .iconfont{
+    font-size: 0.17rem;
+}
+
+
+footer  span .logo{
+    padding-top:0.01rem;
+}
+footer  span .logo i{
+    background: url(../img/logo.png) no-repeat;
+    background-size: cover;
+    width: 0.18rem;
+    height: 0.18rem;
+    display: block;
+    margin: 0 auto;
+}
+
+
+footer  span.menu_active .logo i{
+    background-image: url(../img/logo_active.png);
+}
