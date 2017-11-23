@@ -9,7 +9,7 @@ use App\Models\Label;
 class PassagesController extends Controller
 {
 
-    public function show($id)
+    public function show(Passage $passage)
     {
         $passage = $passage->load(['user', 'favors', 'comments']);
 
