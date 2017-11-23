@@ -9,6 +9,11 @@ use App\Models\Label;
 class PassagesController extends Controller
 {
 
+    public function show(Passage $passage)
+    {
+        dd($passage);
+    }
+
 
     public function create()
     {
