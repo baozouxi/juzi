@@ -45,7 +45,7 @@
             @foreach($passage->comments as $comment)
                 <div class="comment_item">
                     <i class="iconfont">&#xe606;</i>
-                    <div class="headImg"><img src="{{ $comment->user->avator }}" alt=""></div>
+                    <div class="headImg"><img src="{{ $comment->user->avatar }}" alt=""></div>
                     <div class="comment_content">
                         <div class="nickname">
                             {{ $comment->user->nickname }}

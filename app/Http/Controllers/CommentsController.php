@@ -26,13 +26,10 @@ class CommentsController extends Controller
 
         if ($comment = Comment::create($request->all())) {
 
-            dd('asdas');
             return redirect()->back();
-        }else{
-            dd($comment);
         }
 
-//        return redirect()->back();
+      return redirect()->back();
     }
 
 }
