@@ -33,9 +33,27 @@ class IndexController extends Controller
     }
 
     //我
-    public function me()
+    public function me(Request $request)
     {
-        $user = session('wechat.oauth_user');
-        return view('me')->with(['user'=>$user]);
+        $user = session('login_user');
+        $status = $request->has('status') ? $request->input('status')  : 'publis';
+
+        switch ($status) {
+            case 'publish':
+                $passages = $user->passages;
+                break;
+
+            case 'like':
+
+                break;
+
+            default:
+
+                break;
+        }
+        
+        
+
+        return view('me')->with(['user'=>$user, 'passages'=>$passages]);
     }
 }
