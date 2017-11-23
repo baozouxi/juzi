@@ -170,3 +170,8 @@ article{
     background: #949494;
     color:#fff;
 }
+
+
+.disabled{
+    background: rgb(76,76,76);
+}

@@ -11,19 +11,11 @@
     <link rel="stylesheet" type="text/css" href="{{ asset('css/style.css') }}"/>
     <link rel="stylesheet" type="text/css" href="{{ asset('css/bootstrap.min.css') }}">
     <link rel="stylesheet" href="{{ asset('css/create.css') }}">
-    <title>发布句子</title>
+    <title>发布标签</title>
 </head>
 
 <body>
-<div id="header" class="head">
-    <div class="wrap">
-        <i class="menu_back"><a href="/"></a></i>
-        <div class="title">
-            <span class="title_d"><p>发布句子</p></span>
-            <div class="clear"></div>
-        </div>
-    </div>
-</div>
+
 <div id="form">
 
 
