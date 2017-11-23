@@ -26,7 +26,7 @@
         </div>
     </article>
     <div class="buttons">
-        <span class=" {{ $liked ?: 'menu_active'  }} "><i class="iconfont">&#xe600;</i>{{ $passage->favors()->count() }}</span>
+        <span class=" {{ !$liked ?: 'menu_active'  }} "><i class="iconfont">&#xe600;</i>{{ $passage->favors()->count() }}</span>
         <span><i class="iconfont">&#xe624;</i>{{ $passage->comments()->count() }}</span>
         <span><i class="iconfont">&#xe6ea;</i>复制</span>
     </div>
@@ -34,12 +34,9 @@
         <div class="likes">
             <i class="iconfont">&#xe600;</i>
             <ul>
-                <li><img src="http://qlogo4.store.qq.com/qzone/253120625/253120625/100" alt=""></li>
-                <li><img src="http://qlogo4.store.qq.com/qzone/253120625/253120625/100" alt=""></li>
-                <li><img src="http://qlogo4.store.qq.com/qzone/253120625/253120625/100" alt=""></li>
-                <li><img src="http://qlogo4.store.qq.com/qzone/253120625/253120625/100" alt=""></li>
-                <li><img src="http://qlogo4.store.qq.com/qzone/253120625/253120625/100" alt=""></li>
-                <li><img src="http://qlogo4.store.qq.com/qzone/253120625/253120625/100" alt=""></li>
+                @foreach($passage->favors as $favor)
+                    <li><img src="{{ $favor->user->avator  }}" alt=""></li>
+                @endforeach
             </ul>
         </div>
         <div class="comment_list">
