@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Label;
 
 class LabelsController extends Controller
 {
@@ -21,7 +22,7 @@ class LabelsController extends Controller
             'content.required' => '请输入标签'
         ]);
 
-        $request['user_id'] = Auth::user()->id;
+        $request['user_id'] = session()->get('login_user')->id;
 
         if (Label::create($request->all())) {
             return view('check');
