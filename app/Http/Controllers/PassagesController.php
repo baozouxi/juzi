@@ -11,7 +11,9 @@ class PassagesController extends Controller
 
     public function create()
     {
-        return view('passage.create');
+        $labels = Label::where('checked', 1)->get();
+
+        return view('passage.create', compact('labels'));
     }
 
     public function store(Request $request)
