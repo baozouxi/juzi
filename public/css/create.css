@@ -25,6 +25,7 @@ body{
     color:#fff;
     background: #333;
 }
-.disabled{
+
+span.disabled{
     background: rgb(76,76,76);
 }
