@@ -47,7 +47,7 @@ img { border:0; max-width: 100%;}
 }
 
 
-.menu_active{
+.menu_active,.liked{
     color:#f95900;
 }
 
