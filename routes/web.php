@@ -24,3 +24,20 @@ Route::group(['middleware' => ['web', 'wechat.oauth']], function () {
     Route::resource('favors', 'FavorsController');
     Route::resource('labels', 'LabelsController');
 });
+
+
+
+//以下操作需要管理员权限 到时候添加一个管理员中间件
+Route::group(['middleware' => 'adminCheck'], function () {
+    Route::get('/admin', 'Admin\UsersController@index');
+    Route::resource('users', 'Admin\UsersController');
+    Route::post('/passages/{id}/check', 'PassagesController@check');
+    Route::post('/labels/{id}/check', 'LabelsController@check');
+});
+
+
+
+//后台登录
+Route::get('/admin/login', 'Admin\LoginController@index')->name('loginView');
+Route::get('/admin/logout', 'Admin\LoginController@logout')->name('logout');
+Route::post('/admin/login', 'Admin\LoginController@login')->name('loginPro');
