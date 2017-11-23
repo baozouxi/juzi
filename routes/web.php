@@ -31,8 +31,10 @@ Route::group(['middleware' => ['web', 'wechat.oauth']], function () {
 Route::group(['middleware' => 'adminCheck'], function () {
     Route::get('/admin', 'Admin\UsersController@index');
     Route::resource('users', 'Admin\UsersController');
-    Route::post('/passages/{id}/check', 'PassagesController@check');
-    Route::post('/labels/{id}/check', 'LabelsController@check');
+    Route::get('/admin/passages', 'Admin\PassagesController@index');
+    Route::get('/admin/labels', 'Admin\LabelsController@index');
+    Route::post('/admin/passages/{id}/check', 'Admin\PassagesController@check');
+    Route::post('/admin/labels/{id}/check', 'Admin\LabelsController@check');
 });
 
 
