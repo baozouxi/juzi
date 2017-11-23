@@ -45,7 +45,10 @@ class IndexController extends Controller
                 $passages = new Collection();
 
                 foreach ($user->favors as $favor) {
-                    $passages->add($favor->passage);
+                    if ($favor->passage !== null) {
+                        $passages->add($favor->passage);
+                    }
+
                 }
                 break;
 
@@ -54,7 +57,7 @@ class IndexController extends Controller
                 break;
         }
 
-        dd($passages);
+    
         
 
         return view('me')->with(['user'=>$user, 'passages'=>$passages, 'status'=>$status]);
