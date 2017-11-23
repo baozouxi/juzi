@@ -57,7 +57,7 @@ class IndexController extends Controller
                 break;
         }
 
-    
+
         
 
         return view('me')->with(['user'=>$user, 'passages'=>$passages, 'status'=>$status]);
