@@ -27,7 +27,7 @@ class IndexController extends Controller
             }
         }
 
-        dd($passage);
+        dd($passages);
 
 
         return view('index', compact('passages'));
