@@ -13,11 +13,20 @@ class FavorsController extends Controller
     {
         $passage = Passage::findOrFail($request->passage_id);
 
-        $user_id = session()->get('login_user')->id;
+        $user = session()->get('login_user');
+        $user = $user->load('favors');
 
-        $passage->favors()->create(['user_id'=>$user_id]);
 
+        //判断是否点赞 防止多次点赞
+        foreach ($user->favors as $favor) {
+            if ($favor->user_id == $user->id) {
+                return;
+            }
+        }
+        $passage->favors()->create(['user_id'=>$user->id]);
 
     }
+
+
 
 }
