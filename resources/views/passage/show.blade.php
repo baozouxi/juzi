@@ -40,71 +40,21 @@
             </ul>
         </div>
         <div class="comment_list">
-            <div class="comment_item">
-                <i class="iconfont">&#xe606;</i>
-                <div class="headImg"><img src="http://qlogo4.store.qq.com/qzone/253120625/253120625/100" alt=""></div>
-                <div class="comment_content">
-                    <div class="nickname">
-                        新中发赵兵
-                        <span class="fr date">昨天: 18:11</span>
-                    </div>
-                    <div class="text">
-                        撒豆is建档立卡数据的克
-                    </div>
-                </div>
-            </div>
-            <div class="comment_item">
-                <i class="iconfont">&#xe606;</i>
-                <div class="headImg"><img src="http://qlogo4.store.qq.com/qzone/253120625/253120625/100" alt=""></div>
-                <div class="comment_content">
-                    <div class="nickname">
-                        新中发赵兵
-                        <span class="fr date">昨天: 18:11</span>
-                    </div>
-                    <div class="text">
-                        撒豆is建档立卡数据的克
+            @foreach($passage->comments as $comment)
+                <div class="comment_item">
+                    <i class="iconfont">&#xe606;</i>
+                    <div class="headImg"><img src="{{ $comment->user->avator }}" alt=""></div>
+                    <div class="comment_content">
+                        <div class="nickname">
+                            {{ $comment->user->nickname }}
+                            <span class="fr date">{{ $comment->created_at->format('Y-m-d') }}</span>
+                        </div>
+                        <div class="text">
+                            {{ $comment->content }}
+                        </div>
                     </div>
                 </div>
-            </div>
-            <div class="comment_item">
-                <i class="iconfont">&#xe606;</i>
-                <div class="headImg"><img src="http://qlogo4.store.qq.com/qzone/253120625/253120625/100" alt=""></div>
-                <div class="comment_content">
-                    <div class="nickname">
-                        新中发赵兵
-                        <span class="fr date">昨天: 18:11</span>
-                    </div>
-                    <div class="text">
-                        撒豆is建档立卡数据的克
-                    </div>
-                </div>
-            </div>
-            <div class="comment_item">
-                <i class="iconfont">&#xe606;</i>
-                <div class="headImg"><img src="http://qlogo4.store.qq.com/qzone/253120625/253120625/100" alt=""></div>
-                <div class="comment_content">
-                    <div class="nickname">
-                        新中发赵兵
-                        <span class="fr date">昨天: 18:11</span>
-                    </div>
-                    <div class="text">
-                        撒豆is建档立卡数据的克
-                    </div>
-                </div>
-            </div>
-            <div class="comment_item">
-                <i class="iconfont">&#xe606;</i>
-                <div class="headImg"><img src="http://qlogo4.store.qq.com/qzone/253120625/253120625/100" alt=""></div>
-                <div class="comment_content">
-                    <div class="nickname">
-                        新中发赵兵
-                        <span class="fr date">昨天: 18:11</span>
-                    </div>
-                    <div class="text">
-                        撒豆is建档立卡数据的克
-                    </div>
-                </div>
-            </div>
+            @endforeach
         </div>
     </div>
 </div>
