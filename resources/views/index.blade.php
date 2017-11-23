@@ -32,7 +32,7 @@
 
             <div class="article_btn tr">
 
-                <span class="like" data-passage_id="{{ $passage->id }}" ><i class="iconfont">&#xe600;</i>{{ $passage->favors_count }}</span>
+                <span class="like  {{ $passage->liked ? 'liked' : '' }} " data-passage_id="{{ $passage->id }}" ><i class="iconfont">&#xe600;</i>{{ $passage->favors_count }}</span>
                 <a href="{{ route('passages.show', ['id'=>$passage->id]) }}"><span><i class="iconfont">&#xe624;</i>{{ $passage->comments_count }}</span></a>
                 <span class="copy_btn"><i class="iconfont">&#xe6ea;</i>复制</span>
 

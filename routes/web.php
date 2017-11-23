@@ -14,11 +14,10 @@
 
 
 
-Route::get('/', 'IndexController@index');
-
 
 
 Route::group(['middleware' => ['web', 'wechat.oauth']], function () {
+    Route::get('/', 'IndexController@index');
     Route::get('/me', 'IndexController@me')->name('me');
     Route::resource('passages', 'PassagesController');
     Route::resource('comments', 'CommentsController');
