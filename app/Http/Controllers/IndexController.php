@@ -36,7 +36,7 @@ class IndexController extends Controller
     public function me(Request $request)
     {
         $user = session('login_user');
-        $status = $request->has('status') ? $request->input('status')  : 'publis';
+        $status = $request->has('status') ? $request->input('status')  : 'publish';
 
         switch ($status) {
             case 'publish':
