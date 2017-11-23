@@ -25,7 +25,7 @@
             <div class="item_wrap">
                 <h1>《{{ $passage->from }}》-- {{ $passage->author }}</h1>
                 <div class="a_span">
-                    @if($passage->labels()->isEmpty())
+                    @if($passage->labels->isEmpty())
                         <span style="background: rgb(76,76,76)">无标签</span>
                     @else
                         @foreach($passage->labels as $label)
