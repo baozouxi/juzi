@@ -37,8 +37,7 @@
             <i class="iconfont">&#xe600;</i>
             <ul>
                 @foreach($passage->favors as $favor)
-                    {{ dump($favor->user) }}
-                    <li><img src='{!! $favor->user->avator !!}' alt=""></li>
+                    <li><img src="{{ $favor->user->avatar  }}" alt=""></li>
                 @endforeach
             </ul>
         </div>
