@@ -88,6 +88,7 @@
 </div>
 
 <footer>
+    <span><a href="/">首页</a></span>
     <span class="active">我发布的</span>
     <span>我收藏的</span>
 </footer>
