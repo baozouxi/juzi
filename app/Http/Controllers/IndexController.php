@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Passage;
+use Illuminate\Database\Eloquent\Collection;
 use Illuminate\Http\Request;
 
 class IndexController extends Controller
@@ -44,7 +45,11 @@ class IndexController extends Controller
                 break;
 
             case 'like':
+                $passages = new Collection();
 
+                foreach ($user->favors as $favor) {
+                    $passages->add($favor->passage);
+                }
                 break;
 
             default:
