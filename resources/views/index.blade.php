@@ -4,6 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <title>今日句子</title>
+    <meta name="csrf-token" content="{{ csrf_token() }}">
     <link rel="stylesheet" href="{{ asset('css/com.css')  }}">
     <link rel="stylesheet" href="{{ asset('css/index.css')  }}">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
@@ -31,7 +32,7 @@
 
             <div class="article_btn tr">
 
-                <span class="like"><i class="iconfont">&#xe600;</i>{{ $passage->favors_count }}</span>
+                <span class="like" data-passage_id="{{ $passage->id }}" ><i class="iconfont">&#xe600;</i>{{ $passage->favors_count }}</span>
                 <a href="{{ route('passages.show', ['id'=>$passage->id]) }}"><span><i class="iconfont">&#xe624;</i>{{ $passage->comments_count }}</span></a>
                 <span class="copy_btn"><i class="iconfont">&#xe6ea;</i>复制</span>
 
@@ -59,6 +60,7 @@
 </footer>
 
 <script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
+<script src="{{ asset('js/com.js') }}"></script>
 <script type="text/javascript" src="{{ asset('js/index.js') }}"></script>
 </body>
 
