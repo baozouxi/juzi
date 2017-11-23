@@ -72,7 +72,7 @@
 
                     layer.confirm('确定删除该条句子吗？', function (index) {
                         data._method = 'DELETE';
-                        $.post('/passages/' + data.id, data, null, 'json').done(function (data) {
+                        $.post('/admin/passages/' + data.id, data, null, 'json').done(function (data) {
                             if (data.status == 'ok') {
                                 obj.del(); //删除对应行（tr）的DOM结构，并更新缓存
                                 layer.close(index);

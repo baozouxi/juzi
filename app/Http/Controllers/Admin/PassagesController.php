@@ -25,11 +25,9 @@ class PassagesController extends Controller
         });
 
 
-
         return view('passage.list', compact('passages'));
 
     }
-
 
 
     //过审  管理员用
@@ -41,6 +39,14 @@ class PassagesController extends Controller
         }
 
         return json_encode(compact('status'));
+
+    }
+
+
+    public function delete($id)
+    {
+        $passage = Passage::findOrFail($id);
+        return $passage->delete();
 
     }
 }
