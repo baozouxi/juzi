@@ -24,11 +24,13 @@ class CommentsController extends Controller
         $request['user_id'] = session()->get('login_user')->id;
         $request['passage_id'] = $passage->id;
 
-        if (Comment::create($request->all())) {
+        if ($comment = Comment::create($request->all())) {
             return redirect()->back();
+        }else{
+            dd($comment);
         }
 
-        return redirect()->back();
+//        return redirect()->back();
     }
 
 }
