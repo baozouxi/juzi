@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Passage;
+use App\Models\Comment;
 
 class CommentsController extends Controller
 {
@@ -23,10 +25,10 @@ class CommentsController extends Controller
         $request['passage_id'] = $passage->id;
 
         if (Comment::create($request->all())) {
-            return json_encode(['status' => 'ok']);
+            return redirect()->back();
         }
 
-        return json_encode(['status' => 'error']);
+        return redirect()->back();
     }
 
 }
