@@ -37,16 +37,16 @@
                 <li class="layui-nav-item">
                     <a class="" href="javascript:;">句子管理</a>
                     <dl class="layui-nav-child">
-                        <dd><a href="{{ route('/admin/passages', ['checked'=>1]) }}">已审核</a></dd>
-                        <dd><a href="{{ route('/admin/passages', ['checked'=>0]) }}">待审核</a></dd>
+                        <dd><a href="{{ route('adminP', ['checked'=>1]) }}">已审核</a></dd>
+                        <dd><a href="{{ route('adminP', ['checked'=>0]) }}">待审核</a></dd>
 
                     </dl>
                 </li>
                 <li class="layui-nav-item">
                     <a class="" href="javascript:;">标签管理</a>
                     <dl class="layui-nav-child">
-                        <dd><a href="{{ route('/admin/labels', ['checked'=>1]) }}">已审核</a></dd>
-                        <dd><a href="{{ route('/admin/labels', ['checked'=>0]) }}">待审核</a></dd>
+                        <dd><a href="{{ route('adminL', ['checked'=>1]) }}">已审核</a></dd>
+                        <dd><a href="{{ route('adminL', ['checked'=>0]) }}">待审核</a></dd>
 
                     </dl>
                 </li>
