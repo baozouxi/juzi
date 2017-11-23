@@ -13,6 +13,15 @@ class PassagesController extends Controller
     {
         $passage = $passage->load(['user', 'favors', 'comments']);
 
+        //当前用户是否点赞  就是看当前句子点赞里面是否包含用户
+        $user_id = session()->get('login_user')->id;
+
+        $liked = $passage->whereHas('favors', function($query) use ($user_id){
+            $query->where('user_id', '=', $user_id);
+        })->count();
+
+        dd($liked);
+
         return view('passage.show',compact('passage'));
     }
 
