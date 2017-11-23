@@ -22,4 +22,5 @@ Route::group(['middleware' => ['web', 'wechat.oauth']], function () {
     Route::resource('passages', 'PassagesController');
     Route::resource('comments', 'CommentsController');
     Route::resource('favors', 'FavorsController');
+    Route::resource('labels', 'LabelsController');
 });
