@@ -35,7 +35,7 @@
                     , {field: 'from', title: '出处', width: 300}
                     , {field: 'labels_arr', title: '标签', width: 300}
                     , {field: 'author', sort: true, title: '原作者', width: 150}
-                    , {field: 'user_name', sort: true, title: '发布者', width: 150}
+                    , {field: 'add_user', sort: true, title: '发布者', width: 150}
                     , {field: 'created_at', sort: true, title: '发布时间', width: 150}
                     , {fixed: 'right', width: 150, align: 'center', toolbar: '#barDemo'}
                 ]]
