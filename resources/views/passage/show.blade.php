@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>评论</title>
+    <title>句子</title>
     <link rel="stylesheet" href="{{ asset('css/com.css') }}">
     <link rel="stylesheet" href="{{ asset('css/comment.css') }}">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
@@ -14,15 +14,15 @@
 <div id="wrap">
     <div id="author" class="hidden">
         <div class="headImg fl">
-            <img src="http://qlogo4.store.qq.com/qzone/253120625/253120625/100" alt="">
+            <img src="{{ $passage->user->avatar }}" alt="">
         </div>
-        <div class="nickname fl">王坤成_旭光腾达</div>
+        <div class="nickname fl">{{ $passage->user->nickname }}</div>
     </div>
     <article>
-        <h1>《腾讯传》</h1>
-        <h2>吴晓波</h2>
+        <h1>《{{ $passage->from }}》</h1>
+        <h2>{{ $passage->author }}</h2>
         <div class="content">
-            “他之所以糟糕，不是因为技术上不承受，而是它违背了一条非常简单却不易被察觉的竞争原则：在一个缺乏成长性的行业里，任何创新都很难获得等值的回报，因而是没有意义的！”
+            {{ $passage->content }}
         </div>
     </article>
     <div class="buttons">

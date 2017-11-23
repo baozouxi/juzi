@@ -11,6 +11,7 @@ class PassagesController extends Controller
 
     public function show(Passage $passage)
     {
+        $passage = $passage->load('user');
         return view('passage.show',compact('passage'));
     }
 
