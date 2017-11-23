@@ -25,6 +25,8 @@ class CommentsController extends Controller
         $request['passage_id'] = $passage->id;
 
         if ($comment = Comment::create($request->all())) {
+
+            dd('asdas');
             return redirect()->back();
         }else{
             dd($comment);
