@@ -11,7 +11,7 @@ class PassagesController extends Controller
 
     public function show(Passage $passage)
     {
-        dd($passage);
+        return view('passage.show',compact('passage'));
     }
 
 
