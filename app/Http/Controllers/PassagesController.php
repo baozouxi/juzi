@@ -20,9 +20,9 @@ class PassagesController extends Controller
             $query->where('user_id', '=', $user_id);
         })->count();
 
-        dd($liked);
+        $liked = (boolean) $liked;
 
-        return view('passage.show',compact('passage'));
+        return view('passage.show',compact('passage', 'liked'));
     }
 
 

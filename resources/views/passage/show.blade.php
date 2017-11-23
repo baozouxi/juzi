@@ -26,7 +26,7 @@
         </div>
     </article>
     <div class="buttons">
-        <span class="menu_active"><i class="iconfont">&#xe600;</i>{{ $passage->favors()->count() }}</span>
+        <span class=" {{ $liked ?: 'menu_active'  }} "><i class="iconfont">&#xe600;</i>{{ $passage->favors()->count() }}</span>
         <span><i class="iconfont">&#xe624;</i>{{ $passage->comments()->count() }}</span>
         <span><i class="iconfont">&#xe6ea;</i>复制</span>
     </div>
