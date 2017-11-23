@@ -65,7 +65,7 @@
 <div id="commentInput">
     <form action="">
         <input type="hidden" value="{{ csrf_token()  }}" name="_token">
-        <input type="text" name="passage_id" value="{{ $passage->id }}">
+        <input type="hidden" name="passage_id" value="{{ $passage->id }}">
         <input type="text" name="content" class="fl" placeholder="请输入评论内容...">
         <span class="fl comment_store">发表</span>
     </form>
