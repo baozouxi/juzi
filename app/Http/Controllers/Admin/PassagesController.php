@@ -23,6 +23,9 @@ class PassagesController extends Controller
             });
             $item['labels_arr'] = implode('、', $labels);
         });
+
+        dd($passages);
+
         return view('passage.list', compact('passages'));
 
     }
