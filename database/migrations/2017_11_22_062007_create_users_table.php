@@ -19,7 +19,7 @@ class CreateUsersTable extends Migration
             $table->string('union_id')->unique();
             $table->string('name');
             $table->string('nickname');
-            $table->string('email')->unique();
+            $table->string('email')->nullable();
             $table->string('avatar');
             $table->tinyInteger('is_use')->default('1')->comment('功能限制');
         });
