@@ -40,7 +40,8 @@ class LabelsController extends Controller
     public function delete($id)
     {
         $label = Label::findOrFail($id);
-        return $label->delete();
+        $label->delete();
+        return json_encode(['status'=>'ok']);
 
     }
 }
