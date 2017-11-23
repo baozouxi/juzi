@@ -44,10 +44,6 @@ class IndexController extends Controller
             case 'like':
                 $passages = new Collection();
 
-                foreach ($passages as $passage) {
-                    dd($passage);
-                }
-
                 foreach ($user->favors as $favor) {
                     $passages->add($favor->passage);
                 }
@@ -57,7 +53,8 @@ class IndexController extends Controller
 
                 break;
         }
-        
+
+        dd($passages);
         
 
         return view('me')->with(['user'=>$user, 'passages'=>$passages, 'status'=>$status]);
