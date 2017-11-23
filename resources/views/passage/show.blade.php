@@ -60,20 +60,36 @@
         </div>
     </div>
 </div>
+
+{{--评论框--}}
+<div id="commentInput">
+    <form action="">
+        <input type="text" class="fl" placeholder="请输入评论内容...">
+        <span class="fl">发表</span>
+    </form>
+</div>
+
+
 <footer>
     <a href="/"><span>
             <p class="iconfont logo"><i></i></p>
             <p>金句</p>
         </span></a>
-    <a href="{{ route('comments.create') }}"></a> <span>
+    <span class="comment_btn">
             <p class="iconfont">&#xe601;</p>
             <p>发布评论</p>
-        </span></a>
+        </span>
     <a href="{{ route('me') }}"><span>
             <p class="iconfont">&#xe740;</p>
             <p>我</p>
         </span></a>
 </footer>
+
+
+
+<script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
+<script type="text/javascript" src="{{ asset('js/comment.js') }}"></script>
+
 </body>
 
 </html>

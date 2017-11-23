@@ -135,3 +135,37 @@ article{
     font-size: 0.12rem;
     margin-top:0.1rem;
 }
+
+
+#commentInput{
+    width: 100%;
+    height: 0.5rem;
+    position: fixed;
+    max-width: 640px;
+    bottom: 0.4rem;
+    background: #e0e0e0;
+}
+
+
+
+#commentInput input{
+    width: 71%;
+    height: 0.5rem;
+    display: block;
+    background: #eeeeee;
+    border: 0;
+    font-size: 0.15rem;
+    text-indent: 1em;
+    outline: 0;
+}
+
+#commentInput span{
+    display: block;
+    height: 0.5rem;
+    width: 29%;
+    text-align: center;
+    line-height: 0.5rem;
+    font-size: 0.15rem;
+    background: #949494;
+    color:#fff;
+}
