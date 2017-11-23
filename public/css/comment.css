@@ -137,6 +137,11 @@ article{
 }
 
 
+footer  span{
+    width:33.3333%;
+}
+
+
 #commentInput{
     width: 100%;
     height: 0.5rem;
