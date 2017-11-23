@@ -64,8 +64,10 @@
 {{--评论框--}}
 <div id="commentInput">
     <form action="">
-        <input type="text" class="fl" placeholder="请输入评论内容...">
-        <span class="fl">发表</span>
+        <input type="hidden" value="{{ csrf_token()  }}" name="_token">
+        <input type="text" name="passage_id" value="{{ $passage->id }}">
+        <input type="text" name="content" class="fl" placeholder="请输入评论内容...">
+        <span class="fl comment_store">发表</span>
     </form>
 </div>
 
@@ -88,6 +90,7 @@
 
 
 <script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
+<script type="text/javascript" src="{{ asset('js/com.js') }}"></script>
 <script type="text/javascript" src="{{ asset('js/comment.js') }}"></script>
 
 </body>
