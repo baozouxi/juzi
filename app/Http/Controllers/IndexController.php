@@ -13,7 +13,8 @@ class IndexController extends Controller
         $passages = Passage::where('checked', '1')->withCount(['comments', 'favors'])->with(['user'])->get();
 
 
-        return view('index');
+
+        return view('index', compact('passages'));
     }
 
 
