@@ -43,8 +43,8 @@
 
 <footer>
     <span><a href="/">今句首页</a></span>
-    <span class="active"><a href="{{ route('me',['status'=>'publish']) }}">我发布的</a></span>
-    <span><a href="{{ route('me', ['status'=>'like']) }}">我点赞的</a></span>
+    <span class="{{ $status != 'publish' ?:  'active' }}"><a href="{{ route('me',['status'=>'publish']) }}">我发布的</a></span>
+    <span class="{{ $status != 'like' ?:  'active' }}"><a href="{{ route('me', ['status'=>'like']) }}">我点赞的</a></span>
 </footer>
 </body>
 

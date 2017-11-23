@@ -54,6 +54,6 @@ class IndexController extends Controller
         
         
 
-        return view('me')->with(['user'=>$user, 'passages'=>$passages]);
+        return view('me')->with(['user'=>$user, 'passages'=>$passages, 'status'=>$status]);
     }
 }

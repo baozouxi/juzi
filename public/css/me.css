@@ -46,6 +46,6 @@ footer span{
     font-size: 0.16rem;
 }
 
-footer span.active{
+footer span.active a{
     color:#ed874f;
 }
