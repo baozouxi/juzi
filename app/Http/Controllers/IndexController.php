@@ -27,9 +27,6 @@ class IndexController extends Controller
             }
         }
 
-
-
-
         return view('index', compact('passages'));
     }
 
@@ -46,6 +43,10 @@ class IndexController extends Controller
 
             case 'like':
                 $passages = new Collection();
+
+                foreach ($passages as $passage) {
+                    dd($passage);
+                }
 
                 foreach ($user->favors as $favor) {
                     $passages->add($favor->passage);
