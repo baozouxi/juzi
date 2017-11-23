@@ -15,6 +15,10 @@ class AppServiceProvider extends ServiceProvider
     public function boot()
     {
         Schema::defaultStringLength("190");
+        View::composer('*', function ($view) {
+            $admin_layout = 'layouts.admin';
+            $view->with(compact('admin_layout'));
+        });
     }
 
     /**
