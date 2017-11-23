@@ -12,7 +12,7 @@ class IndexController extends Controller
     {
         $passages = Passage::where('checked', '1')->withCount(['comments', 'favors'])->with(['user'])->get();
 
-        $cur_user_id = session()-get('login_user')->id;
+        $cur_user_id = session()->get('login_user')->id;
 
         //处理点赞  遍历文章下的点赞  和当前用户id做对比
 
