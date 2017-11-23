@@ -63,7 +63,7 @@
 
 {{--评论框--}}
 <div id="commentInput">
-    <form action="">
+    <form action="{{ route('passages.store') }}">
         <input type="hidden" value="{{ csrf_token()  }}" name="_token">
         <input type="hidden" name="passage_id" value="{{ $passage->id }}">
         <input type="text" name="content" class="fl" placeholder="请输入评论内容...">
