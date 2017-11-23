@@ -27,7 +27,7 @@
         </div>
     </article>
     <div class="buttons">
-        <span class="like {{ !$liked ? '' : 'menu_active'  }} "><i
+        <span class="{{ !$liked ? 'like' : 'liked menu_active'  }} "><i
                     class="iconfont">&#xe600;</i>{{ $passage->favors()->count() }}</span>
         <span><i class="iconfont">&#xe624;</i>{{ $passage->comments()->count() }}</span>
         <span><i class="iconfont">&#xe6ea;</i>复制</span>
@@ -37,6 +37,8 @@
             <i class="iconfont">&#xe600;</i>
             <ul>
                 @foreach($passage->favors as $favor)
+                    askjaskdj
+
                     <li><img src="{{ $favor->user->avator  }}" alt=""></li>
                 @endforeach
             </ul>
