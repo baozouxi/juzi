@@ -29,3 +29,9 @@ body{
 span.disabled{
     background: rgb(255,90,1);
 }
+
+
+.btn-default:hover{
+    color:#fff;
+    background: #333;
+}
