@@ -10,9 +10,18 @@ use Illuminate\Http\Request;
 class IndexController extends Controller
 {
 
-    public function index()
+    public function index(Request $request)
     {
-        $passages = Passage::where('checked', '1')->withCount(['comments', 'favors'])->with(['user'])->get();
+        $passage = new Passage();
+
+        if ($request->has('label')) {
+            $label_id = (int) $request->input('label');
+            $passage = $passage->whereHas('labels',function($query) use($label_id){
+                $query->where('label_id', '=', $label_id);
+            });
+        }
+
+        $passages = $passage->where('checked', '1')->withCount(['comments', 'favors'])->with(['user'])->get();
 
         $labels = Label::all();
 

@@ -14,7 +14,7 @@
 <body>
 <header>
     @foreach($labels as $label)
-    <span><a href="">{{ $label->content }}</a></span>
+        <span><a href="{{ route('index', ['label'=> $label->id]) }}">{{ $label->content }}</a></span>
     @endforeach
 </header>
 <div id="article_list">
