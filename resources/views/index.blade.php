@@ -76,20 +76,6 @@
 <script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
 <script src="{{ asset('js/clipboard.min.js') }}"></script>
 <script src="{{ asset('js/com.js') }}"></script>
-<script>
-    var clipboard = new Clipboard('.copy_btn');
-
-    clipboard.on('success', function(e){
-        console.log(e);
-
-    });
-    clipboard.on('error', function(e){
-     
-    });
-
-
-
-</script>
 
 <script type="text/javascript" src="{{ asset('js/index.js') }}"></script>
 
