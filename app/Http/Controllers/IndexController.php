@@ -30,14 +30,10 @@ class IndexController extends Controller
         //处理点赞  遍历文章下的点赞  和当前用户id做对比
 
         foreach ($passages as $passage) {
+            $passage['liked'] = false;
             foreach ($passage->favors as $favor) {
-                dump($favor->user_id);
-                dump($cur_user_id);
-                echo '</br>';
                 if ($favor->user_id == $cur_user_id) {
                     $passage['liked'] = true;
-                }else{
-                    $passage['liked'] = false;
                 }
             }
         }
