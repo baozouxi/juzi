@@ -26,8 +26,14 @@ class WechatAuthorized
      */
     public function handle(WeChatUserAuthorized $event)
     {
+
         $user = $event->getUser();
+
+        dd($user);
+
         $union_id = $user->getId();
+
+
         $login_user = \App\Models\User::firstOrCreate(['union_id' => $union_id], $user->toArray());
         session()->put('login_user', $login_user);
     }
