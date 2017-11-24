@@ -13,7 +13,7 @@
 
 <body>
 <div class="test-area">
-    <input id="taokouling" value="{{code}}" type="text">
+    <input id="taokouling" value="撒旦撒打算的" type="text">
     <button id="copyCode" class="btn" data-clipboard-target="#taokouling" data-clipboard-action="copy">
         复制淘口令
     </button>
