@@ -31,6 +31,9 @@ class IndexController extends Controller
 
         foreach ($passages as $passage) {
             foreach ($passage->favors as $favor) {
+                dump($favor->user_id);
+                dump($cur_user_id);
+                echo '</br>';
                 if ($favor->user_id == $cur_user_id) {
                     $passage['liked'] = true;
                 }else{
