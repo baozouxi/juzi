@@ -1,5 +1,5 @@
 <div class="test-area">
-    <input class="taokouling" value="{{code}}" type="text">
+    <input class="taokouling" value="sadasx" type="text">
     <button id="copyCode" class="btn" data-clipboard-target=".taokouling" data-clipboard-action="copy">
         复制淘口令
     </button>
