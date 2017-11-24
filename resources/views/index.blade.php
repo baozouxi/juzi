@@ -13,10 +13,9 @@
 
 <body>
 <header>
-    <span><a href="">创业艰难</a></span>
-    <span><a href="">创业艰难</a></span>
-    <span><a href="">创业艰难</a></span>
-    <span><a href="">创业艰难</a></span>
+    @foreach($labels as $label)
+    <span><a href="">{{ $label->content }}</a></span>
+    @endforeach
 </header>
 <div id="article_list">
 

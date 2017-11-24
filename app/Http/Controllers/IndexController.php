@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Label;
 use App\Models\Passage;
 use Illuminate\Database\Eloquent\Collection;
 use Illuminate\Http\Request;
@@ -12,6 +13,8 @@ class IndexController extends Controller
     public function index()
     {
         $passages = Passage::where('checked', '1')->withCount(['comments', 'favors'])->with(['user'])->get();
+
+        $labels = Label::all();
 
         $cur_user_id = session()->get('login_user')->id;
 
@@ -27,7 +30,7 @@ class IndexController extends Controller
             }
         }
 
-        return view('index', compact('passages'));
+        return view('index', compact('passages', 'labels'));
     }
 
     //我
