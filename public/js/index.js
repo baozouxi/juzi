@@ -8,7 +8,5 @@ $(function(){
     clipboard.on('error', function(e){
         alert('复制失败');
     });
-
-
-
+    
 })
