@@ -62,10 +62,10 @@
             <p class="iconfont">&#xe601;</p>
             <p>发布句子</p>
         </span></a>
-    <a href="{{ route('labels.create') }}"> <span>
+{{--    <a href="{{ route('labels.create') }}"> <span>
             <p class="iconfont">&#xe601;</p>
             <p>发布标签</p>
-        </span></a>
+        </span></a>--}}
     <a href="{{ route('me') }}"><span>
             <p class="iconfont">&#xe740;</p>
             <p>我</p>
