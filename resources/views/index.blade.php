@@ -44,7 +44,7 @@
                                 class="iconfont">&#xe600;</i>{{ $passage->favors_count }}</span>
                     <a href="{{ route('passages.show', ['id'=>$passage->id]) }}"><span><i
                                     class="iconfont">&#xe624;</i>{{ $passage->comments_count }}</span></a>
-                    <span class="copy_btn"><i class="iconfont">&#xe6ea;</i>复制</span>
+                    <span class="copy_btn" data-clipboard-text="{{ $passage->content }}"><i class="iconfont">&#xe6ea;</i>复制</span>
 
                 </div>
             </div>
@@ -74,8 +74,11 @@
 </footer>
 
 <script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
+<script src="{{ asset('js/clipboard.min.js') }}"></script>
 <script src="{{ asset('js/com.js') }}"></script>
 <script type="text/javascript" src="{{ asset('js/index.js') }}"></script>
+
+
 </body>
 
 </html>
