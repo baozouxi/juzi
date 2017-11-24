@@ -31,17 +31,14 @@ class IndexController extends Controller
 
         foreach ($passages as $passage) {
             foreach ($passage->favors as $favor) {
-
-
                 if ($favor->user_id == $cur_user_id) {
-                    dump('ok');
                     $passage['liked'] = true;
                 }else{
                     $passage['liked'] = false;
                 }
             }
         }
-
+        dd($passages);
 
         return view('index', compact('passages', 'labels'));
     }
