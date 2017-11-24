@@ -45,7 +45,7 @@
                     <a href="{{ route('passages.show', ['id'=>$passage->id]) }}"><span><i
                                     class="iconfont">&#xe624;</i>{{ $passage->comments_count }}</span></a>
 
-                    <input type="hidden" id="cp_con_{{ $passage->id }}" value="{{ $passage->content }}">
+                    <input type="text" style="display: none;" id="cp_con_{{ $passage->id }}" value="{{ $passage->content }}">
                     <span class="copy_btn"  data-clipboard-target="#cp_con_{{ $passage->id }}" data-clipboard-action="copy"><i class="iconfont">&#xe6ea;</i>复制</span>
 
                 </div>
