@@ -97,3 +97,13 @@ footer  span .logo i{
 footer  span.menu_active .logo i{
     background-image: url(../img/logo_active.png);
 }
+
+
+button.copy_btn{
+    border: 0;
+    padding: 0.01rem 0.15rem;
+    border-left: 0.01rem solid #a4a4a4;
+    color: #8f8f8f;
+    outline: none;
+    background: #fff;
+}

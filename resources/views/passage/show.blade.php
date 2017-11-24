@@ -30,7 +30,7 @@
         <span class="{{ !$liked ? 'like' : 'liked menu_active'  }} "><i
                     class="iconfont">&#xe600;</i>{{ $passage->favors()->count() }}</span>
         <span><i class="iconfont">&#xe624;</i>{{ $passage->comments()->count() }}</span>
-        <span><i class="iconfont">&#xe6ea;</i>复制</span>
+        <button class="copy_btn" data-clipboard-action="copy" data-clipboard-target=".content"><i class="iconfont">&#xe6ea;</i>复制</button>
     </div>
     <div id="comment">
         <div class="likes">
@@ -90,8 +90,10 @@
 
 
 <script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
+<script src="{{ asset('js/clipboard.min.js') }}"></script>
 <script type="text/javascript" src="{{ asset('js/com.js') }}"></script>
 <script type="text/javascript" src="{{ asset('js/comment.js') }}"></script>
+<script type="text/javascript" src="{{ asset('js/index.js') }}"></script>
 
 </body>
 
