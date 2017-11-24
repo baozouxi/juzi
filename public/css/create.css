@@ -10,7 +10,7 @@ body{
 
 .form-group span{
     padding: 2px 5px;
-    background: rgb(255,90,1);
+    background: rgb(76,76,76);
     color: #fff;
     border-radius: 5px;
     margin-right: 6px;
@@ -27,5 +27,5 @@ body{
 }
 
 span.disabled{
-    background: rgb(76,76,76);
+    background: rgb(255,90,1);
 }

@@ -64,11 +64,35 @@
         });
 
 
+
+        $('input, textarea').blur(function(event) {
+            checkInput();
+        });
+
+
         function disabled(obj, id) {
             $('#'+ id +'').remove()
             obj.removeClass('disabled');
         }
 
+
+        function checkInput() {
+            var input1 = $('input[name=from]');
+            var input2 = $('input[name=author]');
+            var input3 = $('textarea[name=content]');
+
+            if (isEmpty(input1) || isEmpty(input2) || isEmpty(input3)) {
+                $('button[type=submit]').css('background', '#333');
+            }else{
+                $('button[type=submit]').css('background', 'rgb(255,90,1)');
+            }
+        }
+
+
+        function isEmpty(obj)
+        {
+            return obj.val() == '';
+        }
 
 
     });
