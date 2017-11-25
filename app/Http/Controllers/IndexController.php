@@ -56,7 +56,7 @@ class IndexController extends Controller
 
             case 'like':
                 $passages = new Collection();
-
+                 dd($user->favors()->passage());
                 foreach ($user->favors as $favor) {
                     if ($favor->passage !== null && $favor->passage->checked == 1 ) {
                         $passages->add($favor->passage);
