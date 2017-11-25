@@ -45,8 +45,8 @@ class IndexController extends Controller
     {
         $user = session('login_user');
         $user = $user->load(['passages'=>function($query){
-            $query->where('checked', '1');
-        }]);
+                         $query->where('checked', '1');
+                }]);
         $status = $request->has('status') ? $request->input('status')  : 'publish';
 
         switch ($status) {
@@ -58,7 +58,7 @@ class IndexController extends Controller
                 $passages = new Collection();
 
                 foreach ($user->favors as $favor) {
-                    if ($favor->passage !== null) {
+                    if ($favor->passage !== null && $favor->passage->checked == 1 ) {
                         $passages->add($favor->passage);
                     }
                 }
