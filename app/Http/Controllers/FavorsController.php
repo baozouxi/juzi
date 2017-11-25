@@ -30,7 +30,7 @@ class FavorsController extends Controller
 
 
 
-    public function delete($id)
+    public function destroy($id)
     {
         $user_id = session()->get('login_user')->id;
         $favor = Favor::where('user_id',$user_id)->where('passage_id', (int)$id)->first();
