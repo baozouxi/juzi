@@ -18,13 +18,21 @@ class PassagesController extends Controller
 
         $liked = false;
 
+        $owner = false;
+
+        //句子作者拥有删除评论的选项
+
+        if ($passage->user_id == $user_id) {
+            $owner = true;
+        }
+
         $passage->favors->map(function($item) use(&$liked, $user_id){
             if ($item->user_id == $user_id) {
                 $liked = true;
             }
         });
 
-        return view('passage.show',compact('passage', 'liked'));
+        return view('passage.show',compact('passage', 'liked', 'owner'));
     }
 
 

@@ -50,7 +50,10 @@
                     <div class="comment_content">
                         <div class="nickname">
                             {{ $comment->user->nickname }}
-                            <span class="fr comment_delete_btn" data-comment_id="{{ $comment->id }}">删除</span>
+
+                            @if($owner)
+                             <span class="fr comment_delete_btn" data-comment_id="{{ $comment->id }}">删除</span>
+                            @endif
                             <span class="fr date">{{ $comment->created_at->format('Y-m-d') }}</span>
                         </div>
                         <div class="text">
