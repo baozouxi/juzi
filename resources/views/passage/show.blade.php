@@ -95,9 +95,9 @@
 <script type="text/javascript" src="{{ asset('js/comment.js') }}"></script>
 <script type="text/javascript" src="{{ asset('js/index.js') }}"></script>
 @if($errors->isNotEmpty())
-    <script>
-        alert('{{  array_pop($errors->messages())}}');
-    </script>
+
+    {{ $errors->messages() }}
+
 @endif
 
 
