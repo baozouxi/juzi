@@ -48,7 +48,10 @@ class IndexController extends Controller
 
         switch ($status) {
             case 'publish':
-                $passages = $user->passages()->where('checked', '1');
+                $user_temp = $user->load(['passages'=>function($query){
+                    $query->where('checked', '1');
+                }]);
+                $passages = $user_temp->passages;
                 break;
 
             case 'like':
