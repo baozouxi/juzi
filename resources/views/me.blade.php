@@ -27,22 +27,32 @@
 </div>
 <div id="article_list">
     @foreach($passages as $passage)
-    <div class="article_item">
-       <a href="{{ route('passages.show', ['id'=>$passage->id]) }}"> <div class="item_wrap">
-            <h1>《{{ $passage->from }}》-- {{ $passage->author }}</h1>
-            <div class="a_span">
-                @if($passage->labels->isEmpty())
-                    <span style="background: rgb(76,76,76)">无标签</span>
-                @else
-                    @foreach($passage->labels as $label)
-                        <span>{{ $label->content }}</span>
-                    @endforeach
-                @endif
+        <div class="article_item">
+            <div class="item_wrap">
+                <h1>《{{ $passage->from }}》-- {{ $passage->author }}</h1>
+                <div class="a_span">
+                    @if($passage->labels->isEmpty())
+                        <span style="background: rgb(76,76,76)">无标签</span>
+                    @else
+                        @foreach($passage->labels as $label)
+                            <span>{{ $label->content }}</span>
+                        @endforeach
+                    @endif
+
+                </div>
+                <div class="content cp_con_{{ $passage->id }}">{{ $passage->content }}
+                </div>
+
+                <div class="article_btn tr">
+
+                    <span><i class="iconfont">&#xe600;</i>{{ $passage->favors_count }}</span>
+                    <a href="{{ route('passages.show', ['id'=>$passage->id]) }}"><span><i
+                                    class="iconfont">&#xe624;</i>{{ $passage->comments_count }}</span></a>
+                    <button class="copy_btn" data-clipboard-action="copy" data-clipboard-target=".cp_con_{{ $passage->id }}"><i class="iconfont">&#xe6ea;</i>复制</button>
+
+                </div>
             </div>
-            <div class="content">{{ $passage->content }}
-            </div>
-        </div></a>
-    </div>
+        </div>
     @endforeach
 
 </div>
