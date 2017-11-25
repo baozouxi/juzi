@@ -44,14 +44,14 @@ class IndexController extends Controller
     public function me(Request $request)
     {
         $user = session('login_user');
+        $user = $user->load(['passages'=>function($query){
+            $query->where('checked', '1');
+        }]);
         $status = $request->has('status') ? $request->input('status')  : 'publish';
 
         switch ($status) {
             case 'publish':
-                $user_temp = $user->load(['passages'=>function($query){
-                    $query->where('checked', '1');
-                }]);
-                $passages = $user_temp->passages;
+                $passages = $user->passages;
                 break;
 
             case 'like':
@@ -61,7 +61,6 @@ class IndexController extends Controller
                     if ($favor->passage !== null) {
                         $passages->add($favor->passage);
                     }
-
                 }
                 break;
 
@@ -71,7 +70,6 @@ class IndexController extends Controller
         }
 
 
-        
 
         return view('me')->with(['user'=>$user, 'passages'=>$passages, 'status'=>$status]);
     }
