@@ -45,7 +45,7 @@
 
                 <div class="article_btn tr">
 
-                    <span><i class="iconfont">&#xe600;</i>{{ $passage->favors->count() }}</span>
+                    <span class="{{ $status == 'like' ? 'liked menu_active' :'' }}" ><i class="iconfont">&#xe600;</i>{{ $passage->favors->count() }}</span>
                     <a href="{{ route('passages.show', ['id'=>$passage->id]) }}"><span><i
                                     class="iconfont">&#xe624;</i>{{ $passage->comments->count() }}</span></a>
                     <button class="copy_btn" data-clipboard-action="copy" data-clipboard-target=".cp_con_{{ $passage->id }}"><i class="iconfont">&#xe6ea;</i>复制</button>
