@@ -96,8 +96,10 @@
 <script type="text/javascript" src="{{ asset('js/index.js') }}"></script>
 @if($errors->isNotEmpty())
 
-    {{ dd($errors->messages()) }}
+    <script>
+        alert('{{ array_pop($errors->messages())[0] }}')
 
+    </script>
 @endif
 
 
