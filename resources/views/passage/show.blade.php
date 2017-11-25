@@ -96,7 +96,7 @@
 <script type="text/javascript" src="{{ asset('js/index.js') }}"></script>
 @if($errors->isNotEmpty())
     <script>
-        alert('{{  array_pop($errors->getMessages())}}');
+        alert('{{  array_pop($errors->messages())}}');
     </script>
 @endif
 
