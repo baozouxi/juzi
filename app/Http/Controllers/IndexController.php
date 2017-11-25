@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Favor;
 use App\Models\Label;
 use App\Models\Passage;
 use Illuminate\Database\Eloquent\Collection;
@@ -46,7 +47,7 @@ class IndexController extends Controller
         $user = session('login_user');
         $user = $user->load(['passages'=>function($query){
                          $query->where('checked', '1');
-                }, 'favors']);
+                }]);
         $status = $request->has('status') ? $request->input('status')  : 'publish';
 
         switch ($status) {
@@ -56,10 +57,10 @@ class IndexController extends Controller
 
             case 'like':
                 $passages = new Collection();
-                $favors = $user->favors;
 
+                $favors = Favor::where('user_id', $user->id)->whereHas('passage')->get();
                 foreach ($favors as $favor) {
-                    if ($favor->passage != null && $favor->passage->checked == 1 ) {
+                    if ($favor->passage->checked == 1 ) {
                         dump($favor->passage);
                         $passages->add($favor->passage);
                     }
