@@ -46,7 +46,7 @@ class IndexController extends Controller
         $user = session('login_user');
         $user = $user->load(['passages'=>function($query){
                          $query->where('checked', '1');
-                }]);
+                }, 'favors']);
         $status = $request->has('status') ? $request->input('status')  : 'publish';
 
         switch ($status) {
@@ -56,7 +56,7 @@ class IndexController extends Controller
 
             case 'like':
                 $passages = new Collection();
-                $favors = $user->favors();
+                $favors = $user->favors;
                 dd($favors);
                 foreach ($user->favors as $favor) {
                     if ($favor->passage !== null && $favor->passage->checked == 1 ) {
