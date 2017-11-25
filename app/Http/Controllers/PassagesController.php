@@ -18,17 +18,11 @@ class PassagesController extends Controller
 
         $liked = false;
 
-        $passage->favors->map(function($item) use($liked, $user_id){
+        $passage->favors->map(function($item) use(&$liked, $user_id){
             if ($item->user_id == $user_id) {
                 $liked = true;
             }
         });
-
-
-
-        dump($liked);
-
-        $liked = (boolean) $liked;
 
         return view('passage.show',compact('passage', 'liked'));
     }
