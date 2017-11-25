@@ -20,7 +20,7 @@ class PassagesController extends Controller
             $query->where('user_id', '=', $user_id);
         })->count();
 
-        dd($liked);
+        dump($liked);
 
         $liked = (boolean) $liked;
 
