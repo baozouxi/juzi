@@ -59,10 +59,13 @@ class IndexController extends Controller
                 $favors = $user->favors;
 
                 foreach ($favors as $favor) {
-                    if ($favor->passage !== null && $favor->passage->checked == 1 ) {
+                    if ($favor->passage != null && $favor->passage->checked == 1 ) {
+                        dump($favor->passage);
                         $passages->add($favor->passage);
                     }
                 }
+
+                dd($passages);
                 break;
 
             default:
