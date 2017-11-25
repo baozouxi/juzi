@@ -96,7 +96,9 @@
 <script type="text/javascript" src="{{ asset('js/index.js') }}"></script>
 @if($errors->isNotEmpty())
 
-    {{ dd($errors->all()) }}
+    <script>
+        alert('{{ $errors->all()[0] }}')
+    </script>
 
 @endif
 
