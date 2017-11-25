@@ -16,9 +16,15 @@ class PassagesController extends Controller
         //当前用户是否点赞  就是看当前句子点赞里面是否包含用户
         $user_id = session()->get('login_user')->id;
 
-        $liked = $passage->whereHas('favors', function($query) use ($user_id){
-            $query->where('user_id', '=', $user_id);
-        })->get();
+        $liked = false;
+
+        $passage->favors->map(function($item) use($liked, $user_id){
+            if ($item->user_id == $$user_id) {
+                $liked = true;
+            }
+        });
+
+
 
         dump($liked);
 
