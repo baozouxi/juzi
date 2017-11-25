@@ -19,7 +19,9 @@ class PassagesController extends Controller
         $liked = false;
 
         $passage->favors->map(function($item) use($liked, $user_id){
-            dump($item);
+            if ($item->user_id == $user_id) {
+                $liked = true;
+            }
         });
 
 
