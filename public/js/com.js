@@ -23,7 +23,7 @@ $(function(){
         var id = $(this).attr('data-passage_id');
         var _method = 'DELETE';
         $(this).addClass('like').removeClass('liked,menu_active');
-        $.post('/favors', {_method:_method,passage_id:id}).done().fail(function(xhr){
+        $.post('/favors/'+id, {_method:_method,passage_id:id}).done().fail(function(xhr){
             console.log(xhr.status);
         });
 
