@@ -50,6 +50,10 @@ class IndexController extends Controller
                 }]);
         $status = $request->has('status') ? $request->input('status')  : 'publish';
 
+
+
+        $favors = Favor::where('user_id', $user->id)->whereHas('passage')->get(); // 我点赞的
+
         switch ($status) {
             case 'publish':
                 $passages = $user->passages;
@@ -57,16 +61,12 @@ class IndexController extends Controller
 
             case 'like':
                 $passages = new Collection();
-
-                $favors = Favor::where('user_id', $user->id)->whereHas('passage')->get();
                 foreach ($favors as $favor) {
                     if ($favor->passage->checked == 1 ) {
                         dump($favor->passage);
                         $passages->add($favor->passage);
                     }
                 }
-
-                dd($passages);
                 break;
 
             default:
@@ -76,6 +76,6 @@ class IndexController extends Controller
 
 
 
-        return view('me')->with(['user'=>$user, 'passages'=>$passages, 'status'=>$status]);
+        return view('me')->with(['user'=>$user, 'passages'=>$passages, 'favors_count'=>$favors->count() , 'status'=>$status]);
     }
 }
