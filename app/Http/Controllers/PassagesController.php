@@ -18,7 +18,7 @@ class PassagesController extends Controller
 
         $liked = $passage->whereHas('favors', function($query) use ($user_id){
             $query->where('user_id', '=', $user_id);
-        })->count();
+        })->get();
 
         dump($liked);
 
