@@ -19,7 +19,7 @@
         <div class="nick_text fl">
             <div class="nickname">{{ $user->nickname }}</div>
             <div class="fav">
-                <span>发布 {{ $user->passages()->count() }}</span>
+                <span>发布 {{ $user->passages->count() }}</span>
                 <span style="margin-left: 0.1rem;">点赞 {{ $user->favors()->count() }}</span>
             </div>
         </div>
