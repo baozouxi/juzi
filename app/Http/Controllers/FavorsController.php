@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Favor;
 use App\Models\Passage;
 use Illuminate\Http\Request;
 
@@ -25,6 +26,16 @@ class FavorsController extends Controller
 
         $passage->favors()->create(['user_id'=>$user_id]);
 
+    }
+
+
+
+    public function delete($id)
+    {
+        $user_id = session()->get('login_user')->id;
+        $favor = Favor::where('user_id',$user_id)->where('passage_id', (int)$id)->first();
+
+        $favor->delete();
     }
 
 

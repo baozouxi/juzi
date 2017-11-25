@@ -21,8 +21,9 @@ $(function(){
     $('body').on('click', '.liked', function(event) {
         event.preventDefault();
         var id = $(this).attr('data-passage_id');
-        $(this).addClass('menu_active').removeClass('like');
-        $.post('/favors', {passage_id:id}).done().fail(function(xhr){
+        var _method = 'DELETE';
+        $(this).addClass('like').removeClass('liked,menu_active');
+        $.post('/favors', {_method:_method,passage_id:id}).done().fail(function(xhr){
             console.log(xhr.status);
         });
 
