@@ -63,11 +63,11 @@
 </div>
 
 {{--评论框--}}
-<div id="commentInput">
+<div id="commentInput"  style="display: {{ $errors->any() ? 'block' : 'none'}}" >
     <form action="{{ route('comments.store') }}" method="POST">
         <input type="hidden" value="{{ csrf_token()  }}" name="_token">
         <input type="hidden" name="passage_id" value="{{ $passage->id }}">
-        <input type="text" name="content" class="fl" placeholder="请输入评论内容...">
+        <input type="text" name="content" class="fl" placeholder="请输入评论内容..." value="{{ old('content') }}">
         <span class="fl comment_store">发表</span>
     </form>
 </div>
