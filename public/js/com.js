@@ -10,7 +10,7 @@ $(function(){
     $('body').on('click', '.like', function(event) {
         event.preventDefault();
         var id = $(this).attr('data-passage_id');
-        $(this).addClass('menu_active').removeClass('like');
+        $(this).addClass('menu_active liked').removeClass('like');
         $.post('/favors', {passage_id:id}).done().fail(function(xhr){
             console.log(xhr.status);
         });
@@ -22,7 +22,7 @@ $(function(){
         event.preventDefault();
         var id = $(this).attr('data-passage_id');
         var _method = 'DELETE';
-        $(this).addClass('like').removeClass('liked,menu_active');
+        $(this).addClass('like').removeClass('liked menu_active');
         $.post('/favors/'+id, {_method:_method,passage_id:id}).done().fail(function(xhr){
             console.log(xhr.status);
         });
