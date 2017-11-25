@@ -50,6 +50,7 @@
                     <div class="comment_content">
                         <div class="nickname">
                             {{ $comment->user->nickname }}
+                            <span class="fr">删除</span>
                             <span class="fr date">{{ $comment->created_at->format('Y-m-d') }}</span>
                         </div>
                         <div class="text">
