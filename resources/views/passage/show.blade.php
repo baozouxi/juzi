@@ -27,7 +27,7 @@
         </div>
     </article>
     <div class="buttons">
-        <span class="{{ !$liked ? 'like' : 'liked menu_active'  }} "><i
+        <span class="{{ !$liked ? 'like' : 'liked menu_active'  }}" data-passage_id="{{ $passage->id }}"><i
                     class="iconfont">&#xe600;</i>{{ $passage->favors()->count() }}</span>
         <span><i class="iconfont">&#xe624;</i>{{ $passage->comments()->count() }}</span>
         <button class="copy_btn" data-clipboard-action="copy" data-clipboard-target=".content"><i class="iconfont">&#xe6ea;</i>复制
