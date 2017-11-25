@@ -28,7 +28,7 @@
 <div id="article_list">
     @foreach($passages as $passage)
     <div class="article_item">
-        <div class="item_wrap">
+       <a href="{{ route('passages', ['id'=>$passage->id]) }}"> <div class="item_wrap">
             <h1>《{{ $passage->from }}》-- {{ $passage->author }}</h1>
             <div class="a_span">
                 @if($passage->labels->isEmpty())
@@ -41,7 +41,7 @@
             </div>
             <div class="content">{{ $passage->content }}
             </div>
-        </div>
+        </div></a>
     </div>
     @endforeach
 
