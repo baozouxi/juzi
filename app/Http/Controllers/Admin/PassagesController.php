@@ -48,5 +48,6 @@ class PassagesController extends Controller
         $passage = Passage::findOrFail($id);
         $passage->delete();
         return json_encode(['status'=>'ok']);
+
     }
 }
