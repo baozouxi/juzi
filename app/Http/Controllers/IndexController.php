@@ -16,8 +16,8 @@ class IndexController extends Controller
         $passage = new Passage();
 
         if ($request->has('label')) {
-            $label_id = (int) $request->input('label');
-            $passage = $passage->whereHas('labels',function($query) use($label_id){
+            $label_id = (int)$request->input('label');
+            $passage = $passage->whereHas('labels', function ($query) use ($label_id) {
                 $query->where('label_id', '=', $label_id);
             });
         }
@@ -45,11 +45,12 @@ class IndexController extends Controller
     public function me(Request $request)
     {
         $user = session('login_user');
-        $user = $user->load(['passages'=>function($query){
-                         $query->where('checked', '1');
-                }]);
-        $status = $request->has('status') ? $request->input('status')  : 'publish';
-
+        $user = $user->load([
+            'passages' => function ($query) {
+                $query->where('checked', '1');
+            }
+        ]);
+        $status = $request->has('status') ? $request->input('status') : 'publish';
 
 
         $favors = Favor::where('user_id', $user->id)->whereHas('passage')->get(); // 我点赞的
@@ -62,8 +63,7 @@ class IndexController extends Controller
             case 'like':
                 $passages = new Collection();
                 foreach ($favors as $favor) {
-                    if ($favor->passage->checked == 1 ) {
-                        dump($favor->passage);
+                    if ($favor->passage->checked == 1) {
                         $passages->add($favor->passage);
                     }
                 }
@@ -75,7 +75,11 @@ class IndexController extends Controller
         }
 
 
-
-        return view('me')->with(['user'=>$user, 'passages'=>$passages, 'favors_count'=>$favors->count() , 'status'=>$status]);
+        return view('me')->with([
+            'user' => $user,
+            'passages' => $passages,
+            'favors_count' => $favors->count(),
+            'status' => $status
+        ]);
     }
 }
