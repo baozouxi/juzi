@@ -62,6 +62,12 @@
     <span class="{{ $status != 'publish' ?:  'active' }}"><a href="{{ route('me',['status'=>'publish']) }}">我发布的</a></span>
     <span class="{{ $status != 'like' ?:  'active' }}"><a href="{{ route('me', ['status'=>'like']) }}">我点赞的</a></span>
 </footer>
+
+<script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
+<script src="{{ asset('js/clipboard.min.js') }}"></script>
+<script src="{{ asset('js/com.js') }}"></script>
+<script type="text/javascript" src="{{ asset('js/index.js') }}"></script>
+
 </body>
 
 </html>
