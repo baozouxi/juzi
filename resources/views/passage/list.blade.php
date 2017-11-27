@@ -9,6 +9,7 @@
         @if(Request::query('checked') == '0')
         <a class="layui-btn layui-btn-mini" lay-event="check">过审</a>
         @endif
+
         <a class="layui-btn layui-btn-mini" lay-event="update_label">编辑标签</a>
         <a class="layui-btn layui-btn-danger layui-btn-mini" lay-event="del">删除</a>
     </script>
@@ -85,7 +86,15 @@
                         //向服务端发送删除指令
                     });
                 }else if(layEvent === 'update_label') {
-                    alert('sadsa');
+                    layer.open({
+                        type: 1,
+                        content:
+                        ' <select name="" id="">' +
+                        '            <option value="10">1</option>' +
+                        '            <option value="10">1</option>' +
+                        '        </select>',
+
+                    });
                 }
             });
 
