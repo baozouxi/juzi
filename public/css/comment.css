@@ -62,6 +62,10 @@ article{
     color:#939393;
 }
 
+.content{
+    font-family: "SimSun","微软雅黑";
+}
+
 
 .buttons span.menu_active{
  color: #fa9813;
