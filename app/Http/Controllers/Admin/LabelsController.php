@@ -42,7 +42,7 @@ class LabelsController extends Controller
     {
         $label = Label::findOrFail($id);
         $label->delete();
-        return json_encode(['status'=>'ok']);
+        return json_encode(['status' => 'ok']);
 
     }
 
@@ -56,11 +56,9 @@ class LabelsController extends Controller
         $labels = Label::all();
 
         $str = '<div>';
-
         foreach ($labels as $label) {
-            foreach ($p_labels as $p_label) {
-                $str .= '<label>'.$label->content.'</label><input '. $p_label->id == $label->id ? 'checked' : ''  .' type="checkbox" name="labels" value="'.$label->id.'">';
-            }
+            
+            $str .= '<label>' . $label->content . '</label><input  type="checkbox" name="labels" value="' . $label->id . '">';
 
         }
 
