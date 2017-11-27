@@ -93,7 +93,7 @@
 
                 var put_data = {_method:method, field:value};
 
-                $.post('/passages/'+data.id ,put_data, null, 'json').done(function(data){
+                $.post('/admin/passages/'+data.id ,put_data, null, 'json').done(function(data){
                     if (data.status == 'ok') {
                         alert('修改成功');
                     }
