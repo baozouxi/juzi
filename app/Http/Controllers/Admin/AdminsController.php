@@ -12,6 +12,7 @@ class AdminsController extends Controller
     {
         $admin = Admin::findOrFail($admin);
 
+        dd($admin);
 
     }
 }
