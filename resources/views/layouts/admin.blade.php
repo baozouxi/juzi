@@ -97,7 +97,7 @@
 
         $('.update_password').click(function(){
             layer.open({
-                title: '修改密码'
+                title: '修改密码',
                 type: 1,
                 area:['500px', '350px'],
                 content: '<form action="{{route('adminUpdate', ['admin_id'=>session('admin_id')])}}">\n' +
