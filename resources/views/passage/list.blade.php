@@ -91,7 +91,8 @@
                     ,method = 'PATCH'
                     ,field = obj.field; //得到字段
 
-                var put_data = {_method:method, field:value};
+                var put_data = {_method:method};
+                put_data[field] = value;
 
                 $.post('/admin/passages/'+data.id ,put_data, null, 'json').done(function(data){
                     if (data.status == 'ok') {
