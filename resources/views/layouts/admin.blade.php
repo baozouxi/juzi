@@ -75,6 +75,7 @@
 </div>
 <script src="{{ asset('layui/layui.js') }}"></script>
 <script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
+
 <script>
     $.ajaxSetup({
         headers: {
@@ -87,6 +88,16 @@
         var element = layui.element;
 
     });
+
+    layui.use('layer', function(){
+        var layer = layui.layer;
+
+        $('.update_password').click(function(){
+            layer.msg('sad');
+        });
+
+    });
+
 </script>
 
 
