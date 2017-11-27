@@ -123,9 +123,11 @@
     </script>
 
     <script>
-        $('.label_update').click(function(){
-            alert('asd');
-        });
+       $(function(){
+           $('body').on('.label_update', 'click', function(){
+               alert('asd');
+           })
+       });
 
     </script>
 
