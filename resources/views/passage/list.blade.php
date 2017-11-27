@@ -26,8 +26,8 @@
                 , cols: [[ //标题栏
                     {checkbox: true, LAY_CHECKED: false} //默认全选
                     , {field: 'id', title: 'ID', sort: true}
-                    , {field: 'content', title: '内容', width: 800}
-                    , {field: 'from', title: '出处', width: 300}
+                    , {field: 'content', title: '内容', width: 800, edit: 'text'}
+                    , {field: 'from', title: '出处', width: 300,  edit: 'text'}
                     , {field: 'labels_arr', title: '标签', width: 300}
                     , {field: 'author', sort: true, title: '原作者', width: 150}
                     , {field: 'add_user', sort: true, title: '发布者', width: 150}
