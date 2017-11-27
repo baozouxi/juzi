@@ -93,6 +93,10 @@ footer  span .logo i{
     margin: 0 auto;
 }
 
+footer  p{
+    font-size:0.10rem;
+}
+
 
 footer  span.menu_active .logo i{
     background-image: url(../img/logo_active.png);
