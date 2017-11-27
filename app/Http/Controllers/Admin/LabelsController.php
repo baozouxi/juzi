@@ -48,12 +48,20 @@ class LabelsController extends Controller
 
     public function get($id)
     {
+
+        $passage = Passage::findOrFail($id);
+
+        $p_labels = $passage->labels;
+
         $labels = Label::all();
 
         $str = '<div>';
 
         foreach ($labels as $label) {
-            $str .= '<label>'.$label->content.'</label><input type="checkbox" name="labels" value="'.$label->id.'">';
+            foreach ($p_labels as $p_label) {
+                $str .= '<label>'.$label->content.'</label><input '. $p_label->id == $label->id ? 'checked' : ''  .' type="checkbox" name="labels" value="'.$label->id.'">';
+            }
+
         }
 
         $str .= '<p>修改</p></div>';
