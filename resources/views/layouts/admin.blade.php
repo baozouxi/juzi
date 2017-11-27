@@ -51,7 +51,6 @@
                 </li>
 
 
-
                 <li class="layui-nav-item">
                     <a href="javascript:;">用户管理</a>
                     <dl class="layui-nav-child">
@@ -102,6 +101,7 @@
                 area:['500px', '350px'],
                 content: '<form action="{{route('adminUpdate', ['admin_id'=>session('admin_id')])}}">\n' +
                 '                    <label for="">请输入密码</label><input type="password" value="">\n' +
+                '                   <p><button class="layui-btn" type="submit">一个标准的按钮</button></p>\n' +
                 '                </form>' //这里content是一个普通的String
 
             });
