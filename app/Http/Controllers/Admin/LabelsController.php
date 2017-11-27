@@ -45,4 +45,22 @@ class LabelsController extends Controller
         return json_encode(['status'=>'ok']);
 
     }
+
+    public function get($id)
+    {
+        $labels = Label::all();
+
+        $str = '<div>';
+
+        foreach ($labels as $label) {
+            $str = '<label for="$label->content"></label><input type="checkbox" value="$label->id">';
+        }
+
+        $str = '</div>';
+
+        return $str;
+
+    }
+
+
 }

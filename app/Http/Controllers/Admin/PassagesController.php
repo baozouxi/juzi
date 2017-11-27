@@ -18,11 +18,11 @@ class PassagesController extends Controller
         $passages = $passages->with('user', 'labels')->get();
         $passages->map(function ($item) {
             $item['add_user'] = $item->user->name;
-//            $labels = [];
-//            $item->labels()->each(function ($lable) use (&$labels) {
-//                $labels[] = $lable->content;
-//            });
-//            $item['labels_arr'] = implode('、', $labels);
+            $labels = [];
+            $item->labels()->each(function ($lable) use (&$labels) {
+                $labels[] = $lable->content;
+            });
+            $item['labels_arr'] = implode('、', $labels);
         });
 
 
@@ -65,20 +65,6 @@ class PassagesController extends Controller
 
     }
 
-    public function get()
-    {
-        $labels = Label::all();
 
-        $str = '<div>';
-
-        foreach ($labels as $label) {
-            $str = '<label for="$label->content"></label><input type="checkbox" value="$label->id">';
-        }
-
-        $str = '</div>';
-
-        return $str;
-
-    }
 
 }
