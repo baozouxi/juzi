@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Admin;
 
+use App\Models\Passage;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Models\Label;
@@ -43,11 +44,5 @@ class LabelsController extends Controller
         $label->delete();
         return json_encode(['status'=>'ok']);
 
-    }
-
-
-    public function get()
-    {
-        return 'sadasdasd';
     }
 }
