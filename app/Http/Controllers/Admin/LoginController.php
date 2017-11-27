@@ -39,9 +39,9 @@ class LoginController extends Controller
         $session->put('admin_name', $admin->name);
         $session->put('logind', true);
 
+        dd('sadsa');
 
         return redirect(route('users.index'));
-
 
     }
 
