@@ -56,7 +56,7 @@ class LabelsController extends Controller
             $str .= '<label>'.$label->content.'</label><input type="checkbox" name="labels" value="$label->id">';
         }
 
-        $str .= '</div>';
+        $str .= '<p>修改</p></div>';
 
         return $str;
 
