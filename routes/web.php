@@ -36,6 +36,7 @@ Route::group(['middleware' => 'adminCheck'], function () {
     Route::post('/admin/passages/{id}/check', 'Admin\PassagesController@check');
     Route::post('/admin/labels/{id}/check', 'Admin\LabelsController@check');
     Route::delete('/admin/passages/{id}', 'Admin\PassagesController@delete');
+    Route::patch('/admin/passages/{id}', 'Admin\PassagesController@update');
     Route::delete('/admin/labels/{id}', 'Admin\LabelsController@delete');
 });
 

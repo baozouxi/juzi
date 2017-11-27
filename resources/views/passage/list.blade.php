@@ -88,7 +88,17 @@
             table.on('edit(test)', function(obj){
                 var value = obj.value //得到修改后的值
                     ,data = obj.data //得到所在行所有键值
+                    ,method = 'PATCH'
                     ,field = obj.field; //得到字段
+
+                $.post('/passages/'+data.id ,{_method:method,field:value}, null, 'json').done(function(data){
+                    if (data.status == 'ok') {
+                        alert('修改成功');
+                    }
+                }).fail(function(xhr){
+                    alert(xhr.status);
+                });
+
                 layer.msg('[ID: '+ data.id +'] ' + field + ' 字段更改为：'+ value);
             });
 

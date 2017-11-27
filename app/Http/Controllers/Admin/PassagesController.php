@@ -50,4 +50,18 @@ class PassagesController extends Controller
         return json_encode(['status'=>'ok']);
 
     }
+
+
+    public function update(Request $request, $passage)
+    {
+        $passage = Passage::findOrFail($passage);
+
+        if ($passage->update($request->all())) {
+            return json_encode(['status'=>'ok']);
+        }
+
+        return json_encode(['status'=>'error']);
+
+    }
+
 }
