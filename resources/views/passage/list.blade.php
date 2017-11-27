@@ -13,12 +13,6 @@
         <a class="layui-btn layui-btn-mini" lay-event="update_label">编辑标签</a>
         <a class="layui-btn layui-btn-danger layui-btn-mini" lay-event="del">删除</a>
     </script>
-
-
-    <script type="text/html" id="titleTpl">
-        <a href="/detail/@{{d.id}}" class="layui-table-link">@{{d}}</a>
-    </script>
-
 @endsection
 
 
@@ -38,7 +32,7 @@
                     , {field: 'id', title: 'ID', sort: true}
                     , {field: 'content', title: '内容', width: 800, edit: 'text'}
                     , {field: 'from', title: '出处', width: 300,  edit: 'text'}
-                    , {field: 'labels', title: '标签', width: 300,templet: '#titleTpl'}
+                    , {field: 'labels_arr', title: '标签', width: 300}
                     , {field: 'author', sort: true, title: '原作者', width: 150}
                     , {field: 'add_user', sort: true, title: '发布者', width: 150}
                     , {field: 'created_at', sort: true, title: '发布时间', width: 150}

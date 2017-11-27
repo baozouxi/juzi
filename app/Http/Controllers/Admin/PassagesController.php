@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Admin;
 
+use App\Models\Label;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Models\Passage;
@@ -61,6 +62,22 @@ class PassagesController extends Controller
         }
 
         return json_encode(['status'=>'error']);
+
+    }
+
+    public function get()
+    {
+        $labels = Label::all();
+
+        $str = '<div>';
+
+        foreach ($labels as $label) {
+            $str = '<label for="$label->content"></label><input type="checkbox" value="$label->id">';
+        }
+
+        $str = '</div>';
+
+        return $str;
 
     }
 
