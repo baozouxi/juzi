@@ -49,6 +49,9 @@
 
                     </dl>
                 </li>
+
+
+
                 <li class="layui-nav-item">
                     <a href="javascript:;">用户管理</a>
                     <dl class="layui-nav-child">
@@ -94,10 +97,12 @@
 
         $('.update_password').click(function(){
             layer.open({
-
+                title: '修改密码'
                 type: 1,
                 area:['500px', '350px'],
-                content: '传入任意的文本或html' //这里content是一个普通的String
+                content: '<form action="{{route(\'adminUpdate\', [\'admin_id\'=>session(\'admin_id\')])}}">\n' +
+                '                    <label for="">请输入密码</label><input type="password" value="">\n' +
+                '                </form>' //这里content是一个普通的String
 
             });
         });
