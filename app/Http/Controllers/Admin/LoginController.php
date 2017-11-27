@@ -17,6 +17,7 @@ class LoginController extends Controller
 
     public function login(Request $request)
     {
+        dd('sadas');
 
 
         $this->validate($request, [
