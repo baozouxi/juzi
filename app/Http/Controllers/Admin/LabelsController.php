@@ -55,14 +55,14 @@ class LabelsController extends Controller
 
         $labels = Label::all();
 
-        $str = '<div>';
+        $str = '<div><form>';
         foreach ($labels as $label) {
 
             $str .= '<label>' . $label->content . '</label><input  type="checkbox" name="labels" value="' . $label->id . '">';
 
         }
 
-        $str .= '<button class="layui-btn label_update">修改</button></div>';
+        $str .= '<button class="layui-btn label_update">修改</button></form></div>';
 
         return $str;
 
