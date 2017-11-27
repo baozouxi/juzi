@@ -83,7 +83,7 @@
             <p>金句</p>
         </span></a>
     <span class="comment_btn">
-            <p class="iconfont">&#xe601;</p>
+            <p class="iconfont">&#xe602;</p>
             <p>发布评论</p>
         </span>
     <a href="{{ route('me') }}"><span>
