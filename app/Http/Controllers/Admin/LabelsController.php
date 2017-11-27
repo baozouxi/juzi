@@ -62,7 +62,7 @@ class LabelsController extends Controller
 
         }
 
-        $str .= '<button class="layui-btn">修改</button></div>';
+        $str .= '<button class="layui-btn label_update">修改</button></div>';
 
         return $str;
 

@@ -121,4 +121,12 @@
 
         });
     </script>
+
+    <script>
+        $('.label_update').click(function(){
+            alert('asd');
+        });
+
+    </script>
+
 @endpush
