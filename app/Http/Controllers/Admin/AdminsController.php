@@ -11,8 +11,14 @@ class AdminsController extends Controller
     public function update(Request $request, $admin)
     {
         $admin = Admin::findOrFail($admin);
+        $password = $request->input('password');
+        $admin->password = sha1($password);
 
-        dd($admin);
+        if ($admin->save()) {
+            return redirect(route('logout'));
+        }
+
+        return '删除失败';
 
     }
 }
