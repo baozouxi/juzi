@@ -97,6 +97,11 @@ footer  p{
     font-size:0.10rem;
 }
 
+footer  p.bottom{
+    padding-top:0.02rem;
+}
+
+
 
 footer  span.menu_active .logo i{
     background-image: url(../img/logo_active.png);

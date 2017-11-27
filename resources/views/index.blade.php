@@ -55,11 +55,11 @@
 
     <a href="/"> <span class="menu_active">
             <p class="iconfont logo"><i></i></p>
-            <p>今句</p>
+            <p class="bottom">今句</p>
         </span></a>
     <a href="{{ route('passages.create') }}"> <span>
             <p class="iconfont">&#xe601;</p>
-            <p>发布句子</p>
+            <p class="bottom">发布句子</p>
         </span></a>
 {{--    <a href="{{ route('labels.create') }}"> <span>
             <p class="iconfont">&#xe601;</p>
@@ -67,7 +67,7 @@
         </span></a>--}}
     <a href="{{ route('me') }}"><span>
             <p class="iconfont">&#xe740;</p>
-            <p>我</p>
+            <p class="bottom">我</p>
         </span></a>
 
 </footer>

@@ -80,15 +80,15 @@
 <footer>
     <a href="/"><span>
             <p class="iconfont logo"><i></i></p>
-            <p>金句</p>
+            <p class="bottom">金句</p>
         </span></a>
     <span class="comment_btn">
             <p class="iconfont">&#xe601;</p>
-            <p>发布评论</p>
+            <p class="bottom">发布评论</p>
         </span>
     <a href="{{ route('me') }}"><span>
             <p class="iconfont">&#xe740;</p>
-            <p>我</p>
+            <p class="bottom">我</p>
         </span></a>
 </footer>
 
