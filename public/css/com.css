@@ -1,5 +1,5 @@
 body, h1, h2, h3, h4, h5, h6, hr, p, blockquote, dl, dt, dd, ul, ol, li, pre, form, fieldset, legend, button, input, textarea, th, td { margin:0; padding:0; }
-body{font-size:0.12rem; padding-bottom: 0.35rem; max-width: 640px; margin:0 auto;}
+body{font-size:0.12rem; padding-bottom: 0.35rem; max-width: 640px; margin:0 auto; }
 h1, h2, h3, h4, h5, h6{ font-size:100%; }
 ul, ol { list-style:none; }
 a { text-decoration:none; color:#000; }
@@ -72,7 +72,7 @@ footer  span{
     display: block;
     width: 33.3333%;
     float: left;
-    padding-top:0.05rem;
+    padding-top:0.02rem;
     text-align: center;
 }
 

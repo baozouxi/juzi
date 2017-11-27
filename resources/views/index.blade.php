@@ -58,7 +58,7 @@
             <p>今句</p>
         </span></a>
     <a href="{{ route('passages.create') }}"> <span>
-            <p class="iconfont">&#xe602;</p>
+            <p class="iconfont">&#xe601;</p>
             <p>发布句子</p>
         </span></a>
 {{--    <a href="{{ route('labels.create') }}"> <span>
