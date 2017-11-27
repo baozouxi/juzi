@@ -91,7 +91,9 @@
                     ,method = 'PATCH'
                     ,field = obj.field; //得到字段
 
-                $.post('/passages/'+data.id ,{_method:method,field:value}, null, 'json').done(function(data){
+                var put_data = {_method:method, field:value};
+
+                $.post('/passages/'+data.id ,put_data, null, 'json').done(function(data){
                     if (data.status == 'ok') {
                         alert('修改成功');
                     }
