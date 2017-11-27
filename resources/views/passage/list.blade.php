@@ -16,7 +16,7 @@
 
 
     <script type="text/html" id="titleTpl">
-        <a href="/detail/@{{d.id}}" class="layui-table-link">@{{d.labels}}</a>
+        <a href="/detail/@{{d.id}}" class="layui-table-link">@{{d}}</a>
     </script>
 
 @endsection
