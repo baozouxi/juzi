@@ -53,10 +53,10 @@ class LabelsController extends Controller
         $str = '<div>';
 
         foreach ($labels as $label) {
-            $str = '<label for="$label->content"></label><input type="checkbox" value="$label->id">';
+            $str .= '<label for="$label->content"></label><input type="checkbox" value="$label->id">';
         }
 
-        $str = '</div>';
+        $str .= '</div>';
 
         return $str;
 
