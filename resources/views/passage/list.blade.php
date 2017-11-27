@@ -6,13 +6,8 @@
 @section('body')
     <table id="passages" lay-filter="test"></table>
     <script type="text/html" id="barDemo">
-        @if(Request::query('checked') == '0')
         <a class="layui-btn layui-btn-mini" lay-event="check">过审</a>
-        @else
         <a class="layui-btn layui-btn-danger layui-btn-mini" lay-event="del">删除</a>
-        @endif
-
-
     </script>
 @endsection
 
