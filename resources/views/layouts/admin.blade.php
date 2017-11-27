@@ -93,7 +93,13 @@
         var layer = layui.layer;
 
         $('.update_password').click(function(){
-            layer.msg('sad');
+            layer.open({
+
+                type: 1,
+                area:['500px', '350px'],
+                content: '传入任意的文本或html' //这里content是一个普通的String
+
+            });
         });
 
     });
