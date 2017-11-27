@@ -29,6 +29,8 @@ Route::group(['middleware' => ['web', 'wechat.oauth']], function () {
 
 //以下操作需要管理员权限 到时候添加一个管理员中间件
 Route::group(['middleware' => 'adminCheck'], function () {
+
+    Route::post('/admin/{admin_id}', 'Admin\AdminsController@update')->name('adminUpdate');
     Route::get('/admin', 'Admin\UsersController@index');
     Route::resource('users', 'Admin\UsersController');
     Route::get('/admin/passages', 'Admin\PassagesController@index')->name('adminP');
