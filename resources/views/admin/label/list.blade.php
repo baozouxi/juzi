@@ -8,9 +8,9 @@
     <script type="text/html" id="barDemo">
         @if(Request::query('checked') == '0')
         <a class="layui-btn layui-btn-mini" lay-event="check">过审</a>
-        @else
-        <a class="layui-btn layui-btn-danger layui-btn-mini" lay-event="del">删除</a>
         @endif
+        <a class="layui-btn layui-btn-danger layui-btn-mini" lay-event="del">删除</a>
+
     </script>
 @endsection
 
@@ -29,7 +29,7 @@
                 , cols: [[ //标题栏
                     {checkbox: true, LAY_CHECKED: false} //默认全选
                     , {field: 'id', title: 'ID', sort: true}
-                    , {field: 'content', title: '内容', width: 800}
+                    , {field: 'content', title: '内容', width: 800, edit:'text'}
                     , {field: 'author', sort: true, title: '作者', width: 150}
                     , {field: 'created_at', sort: true, title: '发布时间', width: 150}
                     , {fixed: 'right', width: 150, align: 'center', toolbar: '#barDemo'}
@@ -84,6 +84,27 @@
                 }
             });
 
+
+
+            table.on('edit(test)', function(obj){
+                var value = obj.value //得到修改后的值
+                    ,data = obj.data //得到所在行所有键值
+                    ,method = 'PATCH'
+                    ,field = obj.field; //得到字段
+
+                var put_data = {_method:method};
+                put_data[field] = value;
+
+                $.post('/admin/labels/'+data.id ,put_data, null, 'json').done(function(data){
+                    if (data.status == 'ok') {
+                        layer.msg('修改成功');
+                    }
+                }).fail(function(xhr){
+                    layer.msg('修改失败');
+                });
+
+
+            });
 
         });
     </script>

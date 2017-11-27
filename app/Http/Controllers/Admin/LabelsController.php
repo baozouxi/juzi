@@ -69,4 +69,17 @@ class LabelsController extends Controller
     }
 
 
+    public function update(Request $request, $label)
+    {
+        $label = Label::findOrFail($label);
+
+        if ($label->update($request->all())) {
+            return json_encode(['status'=>'ok']);
+        }
+
+        return json_encode(['status'=>'error']);
+
+    }
+
+
 }
