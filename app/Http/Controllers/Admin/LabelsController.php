@@ -44,4 +44,10 @@ class LabelsController extends Controller
         return json_encode(['status'=>'ok']);
 
     }
+
+
+    public function get()
+    {
+        return 'sadasdasd';
+    }
 }

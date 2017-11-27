@@ -86,12 +86,13 @@
                         //向服务端发送删除指令
                     });
                 }else if(layEvent === 'update_label') {
-                    layer.open({
-                        type: 1,
-                        area: ['500px', '300px'],
-                   
-
+                    $.get('/admin/labels/'+data.id,{}, function(str){
+                        layer.open({
+                            type: 1,
+                            content: str //注意，如果str是object，那么需要字符拼接。
+                        });
                     });
+
                 }
             });
 
