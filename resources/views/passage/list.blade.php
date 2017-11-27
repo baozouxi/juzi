@@ -88,11 +88,8 @@
                 }else if(layEvent === 'update_label') {
                     layer.open({
                         type: 1,
-                        content:
-                        ' <select name="" id="">' +
-                        '            <option value="10">1</option>' +
-                        '            <option value="10">1</option>' +
-                        '        </select>',
+                        area: ['500px', '300px'],
+                   
 
                     });
                 }
