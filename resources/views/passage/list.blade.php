@@ -84,7 +84,7 @@
 
                         //向服务端发送删除指令
                     });
-                }else if(layEvent === 'update') {
+                }else if(layEvent === 'update_label') {
                     alert('sadsa');
                 }
             });
