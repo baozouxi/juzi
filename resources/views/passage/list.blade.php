@@ -9,6 +9,7 @@
         @if(Request::query('checked') == '0')
         <a class="layui-btn layui-btn-mini" lay-event="check">过审</a>
         @endif
+        <a class="layui-btn layui-btn-mini" lay-event="update_label">编辑标签</a>
         <a class="layui-btn layui-btn-danger layui-btn-mini" lay-event="del">删除</a>
     </script>
 @endsection
@@ -30,7 +31,7 @@
                     , {field: 'id', title: 'ID', sort: true}
                     , {field: 'content', title: '内容', width: 800, edit: 'text'}
                     , {field: 'from', title: '出处', width: 300,  edit: 'text'}
-                    , {field: 'labels_arr', title: '标签', width: 300, type : 'checkbox'}
+                    , {field: 'labels_arr', title: '标签', width: 300}
                     , {field: 'author', sort: true, title: '原作者', width: 150}
                     , {field: 'add_user', sort: true, title: '发布者', width: 150}
                     , {field: 'created_at', sort: true, title: '发布时间', width: 150}
@@ -83,6 +84,8 @@
 
                         //向服务端发送删除指令
                     });
+                }else if(layEvent === 'update') {
+                    alert('sadsa');
                 }
             });
 
@@ -98,13 +101,13 @@
 
                 $.post('/admin/passages/'+data.id ,put_data, null, 'json').done(function(data){
                     if (data.status == 'ok') {
-                        alert('修改成功');
+                        layer.msg('修改成功');
                     }
                 }).fail(function(xhr){
-                    alert(xhr.status);
+                    layer.msg('修改失败');
                 });
 
-                layer.msg('[ID: '+ data.id +'] ' + field + ' 字段更改为：'+ value);
+
             });
 
 
