@@ -57,12 +57,12 @@ class LabelsController extends Controller
 
         $str = '<div>';
         foreach ($labels as $label) {
-            
+
             $str .= '<label>' . $label->content . '</label><input  type="checkbox" name="labels" value="' . $label->id . '">';
 
         }
 
-        $str .= '<p>修改</p></div>';
+        $str .= '<button class="layui-btn">修改</button></div>';
 
         return $str;
 
