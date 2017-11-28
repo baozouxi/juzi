@@ -22,7 +22,7 @@ class IndexController extends Controller
             });
         }
 
-        $passages = $passage->where('checked', '1')->withCount(['comments', 'favors'])->with(['user'])->get();
+        $passages = $passage->where('checked', '1')->withCount(['comments', 'favors'])->with(['user'])->orderBy('created_at', 'desc')->get();
 
         $labels = Label::all();
 
