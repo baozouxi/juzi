@@ -17,7 +17,7 @@ class CommentsController extends Controller
             'content' => 'required|string|min:10'
         ], [
             'content.required' => '请输入评论内容',
-            'content.min' => '最少10个字符'
+            'content.min' => '最少1个字符'
         ]);
 
 
